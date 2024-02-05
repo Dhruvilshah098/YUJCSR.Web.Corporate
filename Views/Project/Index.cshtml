@@ -18,9 +18,9 @@
 						<i class="fas fa-project-diagram mr-2"></i>
 						<h6 class="m-0 font-weight-bold text-primary">Projects</h6>
 					</span>
-					<span class="float-right">
+					@* <span class="float-right">
 						<a href="/project/Create" class="btn btn-primary btn-sm">Create</a>
-					</span>
+					</span> *@
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
@@ -40,19 +40,20 @@
 								@foreach (var data in Model)
 								{
 									<tr>
-										<td> @data.title </td>
+										<td> @data.Title </td>
 										<td> @data.areOfInterest </td>
 										<td> @data.developmentGoal </td>
-										<td> @data.location </td>
-										<td> @data.totalBudget </td>
-										<td> @data.durationInMonths </td>
-										<td>
-											<a href=@Url.Action("Edit","Project", new {projectid= data.projectID})><i class="fas fa-edit"></i></a> |
-											&nbsp;
-											<a href=@Url.Action("Milestones","Project", new {projectid= data.projectID})>Milestones</a>
+										<td> @data.Location </td>
+										<td> @data.TotalBudget </td>
+										<td> @data.DurationInMonths </td>
+										<td class="text-center">
+											@* <a href=@Url.Action("Edit","Project", new {projectid= data.ProjectID})><i class="fas fa-edit"></i></a> *@
+											<a href="#"><i class="fas fa-eye"></i></a> | <a href="#">Request</a>
+											
+											@* <a href=@Url.Action("Milestones","Project", new {projectid= data.ProjectID})><i class="fas fa-history"></i></a>
 											|
-											&nbsp;
-											<a href=@Url.Action("Budget","Project", new {projectid= data.projectID})>Budgets</a>
+											
+											<a href=@Url.Action("Budget","Project", new {projectid= data.ProjectID})><i class="fas fa-dollar-sign"></i></a> *@
 										</td>
 									</tr>
 								}
